@@ -1,9 +1,8 @@
-// backend/database.js
 const sqlite3 = require('sqlite3').verbose();
 const bcrypt = require('bcryptjs');
 
 // Connect to SQLite database (or create it if it doesn't exist)
-const db = new sqlite3.Database('./database.db');
+const db = new sqlite3.Database(process.env.DATABASE_URL || './database.db');
 
 // Create users table
 db.serialize(() => {

@@ -3,7 +3,7 @@ const cors = require('cors');
 const { db, hashPassword, comparePassword } = require('./database');
 
 const app = express();
-const PORT = 5001;
+const PORT = process.env.PORT || 5001; // Use Render's PORT or fallback to 5001
 
 // Middleware
 app.use(cors());
